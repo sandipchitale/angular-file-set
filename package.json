@@ -3,7 +3,7 @@
     "displayName": "Open related file for Angular files",
     "icon": "images/icon.png",
     "description": "VS Code extention to open related file for Angular files.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "publisher": "sandipchitale",
     "author": {
         "name": "Sandip Chitale"

@@ -69,7 +69,7 @@ export function activate(context: vscode.ExtensionContext) {
                         if (fs.existsSync(path.join(dirname, matches[1] + ext))) {
                             vscode.workspace
                                 .openTextDocument(path.join(dirname, matches[1] + ext))
-                                .then(doc => vscode.window.showTextDocument(doc));
+                                .then(doc => vscode.window.showTextDocument(doc, {preview: false}));
                         }
                     }
                 }
