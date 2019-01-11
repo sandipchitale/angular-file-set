@@ -36,7 +36,7 @@ function addStatusItems(editor: vscode.TextEditor) {
                         -100000
                     );
                     _statusBarItem.tooltip = 'Open ' + ext;
-                    _statusBarItem.text = 'Open ' + ext;
+                    _statusBarItem.text = '$(pencil) ' + ext;
                     _statusBarItem.color = new vscode.ThemeColor('statusBar.foreground');
                     _statusBarItem.command = 'extension.open' + ext;
                     _statusBarItem.show();
@@ -83,13 +83,15 @@ export function activate(context: vscode.ExtensionContext) {
     if (editor) {
         addStatusItems(editor);
     }
-    vscode.window.onDidChangeActiveTextEditor(editor => {
+    const activeTextEditorChange = vscode.window.onDidChangeActiveTextEditor(editor => {
         if (editor) {
             addStatusItems(editor);
         } else {
             disposeStatusItems();
         }
-    });
+    },
+    null,
+    context.subscriptions);
 }
 
 // this method is called when your extension is deactivated
