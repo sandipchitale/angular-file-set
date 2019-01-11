@@ -1,4 +1,4 @@
-# identifierphrase README
+# angular-file-set README
 
 An extension to open related file for Angular files.
 
