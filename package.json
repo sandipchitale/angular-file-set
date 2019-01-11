@@ -1,0 +1,65 @@
+{
+    "name": "angular-file-set",
+    "displayName": "Open related file for Angular files",
+    "icon": "images/icon.png",
+    "description": "VS Code extention to open related file for Angular files.",
+    "version": "1.0.0",
+    "publisher": "sandipchitale",
+    "author": {
+        "name": "Sandip Chitale"
+    },
+    "maintainers": [
+        "Sandip Chitale <sandipchitale@gmail.com>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sandipchitale/angular-file-set"
+    },
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.open.ts",
+                "title": "Open .ts file"
+            },
+            {
+                "command": "extension.open.html",
+                "title": "Open .html file"
+            },
+            {
+                "command": "extension.open.scss",
+                "title": "Open .scss file"
+            },
+            {
+                "command": "extension.open.css",
+                "title": "Open .css file"
+            },
+            {
+                "command": "extension.open.spec.ts",
+                "title": "Open .spec.ts file"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
